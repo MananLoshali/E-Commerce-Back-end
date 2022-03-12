@@ -43,6 +43,12 @@ app.post("/product", async function (req, res) {
   }
 });
 
+app.get("/products",async (req,res)=>{
+  console.log("LKKJh")
+ const products = await Product.getProducts()
+ res.send(products)
+})
+
 app.get("/", function (req, res) {
   res.send("Hello World");
 });

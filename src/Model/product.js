@@ -17,7 +17,11 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
 });
-
+productSchema.statics.getProducts = async function () {
+  const products = await Product.find({});
+  console.log(products)
+  return products
+}
 const Product = mongoose.model("Productsss", productSchema);
 
 module.exports = Product;
